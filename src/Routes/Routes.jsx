@@ -6,33 +6,43 @@ import Products from "../Pages/Products/Products";
 import Cart from "../Pages/Cart/Cart";
 import Customers from "../Pages/Customers/Customers";
 import Orders from "../Pages/Orders/Orders";
+import SignIn from "../Pages/Register/SignIn/SignIn";
+import SignUp from "../Pages/Register/SignUp/SIgnUp";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/dashboard",
         element: <Main />,
         children: [
             {
-                path: "/",
+                path: "/dashboard",
                 element: <Dashboard />,
             },
             {
-                path: "/products",
+                path: "/dashboard/products",
                 element: <Products />,
             },
             {
-                path: "/customers",
+                path: "/dashboard/customers",
                 element: <Customers />,
             },
             {
-                path: "/orders",
+                path: "/dashboard/orders",
                 element: <Orders />,
             },
             {
-                path: "/cart",
+                path: "/dashboard/cart",
                 element: <Cart />,
             },
         ],
+    },
+    {
+        path: '/',
+        element: <SignIn />
+    },
+    {
+        path: '/register',
+        element: <SignUp />
     },
     {
         path: "*",

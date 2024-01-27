@@ -1,20 +1,12 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const isMounted = useRef(false);
-
-  useEffect(() => {
-    isMounted.current = true;
-    return () => {
-      isMounted.current = false;
-    };
-  }, []);
 
   const createUser = async (data) => {
     try {
@@ -50,7 +42,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkUserLoggedIn = async () => {
       const token = localStorage.getItem("token");
-      if (!token || user || !isMounted.current) return;
+      if (!token || user) return;
 
       try {
         const response = await axios.get("https://rapid-shop-server.vercel.app/api/user", {

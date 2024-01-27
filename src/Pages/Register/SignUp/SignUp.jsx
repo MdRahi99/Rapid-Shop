@@ -53,6 +53,21 @@ const SignUp = () => {
                 </h2>
                 <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
                     <div>
+                        <h1 className="text-lg font-serif mb-2">Full Name</h1>
+                        <input
+                            type="text"
+                            {...register("name", {
+                                required: '*Required Field',
+                            })}
+                            placeholder="Enter your full name"
+                            className={`input input-bordered w-full rounded-0 focus:outline-none input-info rounded-none h-10 ${errors.name ? 'border-red-500 focus:border-red-500' : ''
+                                }`}
+                        />
+                        {errors.name && (
+                            <h1 className="font-semibold mt-3 text-orange-600 text-sm">{errors.name.message}</h1>
+                        )}
+                    </div>
+                    <div>
                         <h1 className="text-lg font-serif mb-2">Phone Number</h1>
                         <input
                             type="text"

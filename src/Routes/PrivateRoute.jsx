@@ -1,11 +1,16 @@
 /* eslint-disable react/prop-types */
 import { Navigate, useLocation } from 'react-router-dom';
 import {useAuth} from '../Hooks/useAuth';
+import Loader from '../Pages/Shared/Loader/Loader';
 
 const PrivateRoute = ({children}) => {
 
-    const {user} = useAuth();
+    const {user, loading} = useAuth();
     const location = useLocation();
+
+    if(loading){
+        return <Loader />
+    }
 
     if(user){
         return children;

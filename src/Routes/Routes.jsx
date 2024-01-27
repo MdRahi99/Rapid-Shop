@@ -9,6 +9,8 @@ import Orders from "../Pages/Orders/Orders";
 import SignIn from "../Pages/Register/SignIn/SignIn";
 import SignUp from "../Pages/Register/SignUp/SIgnUp";
 import PrivateRoute from "./PrivateRoute";
+import UserProducts from "../Pages/UserProducts/UserProducts";
+import ProductDetails from "../Pages/UserProducts/ProductDetails";
 
 export const router = createBrowserRouter([
     {
@@ -31,11 +33,25 @@ export const router = createBrowserRouter([
                 path: "/dashboard/orders",
                 element: <Orders />,
             },
-            {
-                path: "/dashboard/cart",
-                element: <Cart />,
-            },
         ],
+    },
+    {
+        path: '/products',
+        element: <Main />,
+        children: [
+            {
+                path: '/products',
+                element: <UserProducts />
+            },
+            {
+                path: '/products/product-details/:id',
+                element: <ProductDetails />
+            },
+            {
+                path: '/products/cart',
+                element: <Cart />
+            }
+        ]
     },
     {
         path: '/',

@@ -10,8 +10,17 @@ const Header = () => {
         <>
             <ul className="menu p-4 w-80 min-h-full bg-white gap-4 font-Ledger">
                 <Link to='/dashboard' className='p-4 text-xl font-bold uppercase'><span className='pr-2 border-r-4 border-double border-sky-400'>Rapid</span> Shop</Link>
+                <h1 className='pb-1 ml-4 w-1/2 text-lg font-bold border-b-2 border-sky-400 mt-6'>User Panel</h1>
                 <li>
-                    <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/dashboard'>Overview</Link>
+                    <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/products'>Products</Link>
+                </li>
+                <li>
+                    <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/products/cart'>Cart Items</Link>
+                </li>
+
+                <h1 className='pb-1 ml-4 w-1/2 text-lg font-bold border-b-2 border-sky-400 mt-6'>Admin Panel</h1>
+                <li>
+                    <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/dashboard'>Dashboard</Link>
                 </li>
                 <li>
                     <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/dashboard/products'>Products List</Link>
@@ -21,9 +30,6 @@ const Header = () => {
                 </li>
                 <li>
                     <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/dashboard/orders'>Orders List</Link>
-                </li>
-                <li>
-                    <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/dashboard/cart'>Cart Items</Link>
                 </li>
                 <li>
                     <button onClick={() => {

@@ -2,9 +2,28 @@
 import { HiStar } from '@react-icons/all-files/hi/HiStar'
 import { HiExternalLink } from '@react-icons/all-files/hi/HiExternalLink'
 import { Link } from 'react-router-dom';
+import useCart from '../Hooks/useCart';
+import { Zoom, toast } from 'react-toastify';
 const ProductCard = ({ product }) => {
 
     const { _id, ImageUrl, Name, Price, Description, Rating } = product;
+
+    const [, addToCart] = useCart();
+
+    const handleAddToCart = () => {
+        addToCart(product);
+        toast.success('Product Added Successfully!', {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Zoom
+        });
+    };
 
     return (
         <div className="shadow-2xl hover:shadow-md hover:shadow-sky-200 bg-base-100 flex flex-col gap-4 p-4 relative">
@@ -20,7 +39,7 @@ const ProductCard = ({ product }) => {
             <Link to={`/products/product-details/${_id}`} className='absolute top-3 right-2 p-2 rounded-full bg-white hover:bg-sky-100 shadow-lg'>
                 <HiExternalLink className='text-xl' />
             </Link>
-            <button className='py-2 text-sm mt-3 bg-sky-200 uppercase font-Ledger font-bold hover:bg-sky-500 hover:text-white'>Add to Cart</button>
+            <button onClick={handleAddToCart} className='py-2 text-sm mt-3 bg-sky-200 uppercase font-Ledger font-bold hover:bg-sky-500 hover:text-white'>Add to Cart</button>
         </div>
     );
 };

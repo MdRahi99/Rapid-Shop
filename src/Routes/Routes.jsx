@@ -8,11 +8,12 @@ import Customers from "../Pages/Customers/Customers";
 import Orders from "../Pages/Orders/Orders";
 import SignIn from "../Pages/Register/SignIn/SignIn";
 import SignUp from "../Pages/Register/SignUp/SIgnUp";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
         path: "/dashboard",
-        element: <Main />,
+        element: <PrivateRoute><Main /></PrivateRoute>,
         children: [
             {
                 path: "/dashboard",

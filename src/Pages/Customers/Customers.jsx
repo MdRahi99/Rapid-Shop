@@ -29,7 +29,7 @@ const Customers = () => {
 
     return (
         <>
-            <h1 className="font-Ledger text-xl bg-sky-100 font-bold text-center py-2">Customers</h1>
+            <h1 className="font-Ledger text-xl bg-sky-100 font-bold text-center py-2">Total Customers: {users.length}</h1>
             <div>
                 <div className="overflow-x-auto mt-6">
                     <table className="table">

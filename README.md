@@ -1,8 +1,11 @@
-# React + Vite
+# Rapid Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- **Responsive**: Ensures seamless usage across devices.
+- **Customizable**: Tailwind CSS integration allows for easy styling adjustments.
+- **Enhanced UI**: Utilizes Daisy UI for improved user interface components.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MdRahi99/Rapid-Shop.git

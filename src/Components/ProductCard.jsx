@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
                 </div>
                 <p className="text-slate-500">{Description.slice(0, 150)}</p>
             </div>
-            <Link to={`/products/product-details/${_id}`} className='absolute top-3 right-2 p-2 rounded-full bg-white hover:bg-sky-100 shadow-lg'>
+            <Link to={`/dashboard/products/product-details/${_id}`} className='absolute top-3 right-2 p-2 rounded-full bg-white hover:bg-sky-100 shadow-lg'>
                 <HiExternalLink className='text-xl' />
             </Link>
             <button onClick={handleAddToCart} className='py-2 text-sm mt-3 bg-sky-200 uppercase font-Ledger font-bold hover:bg-sky-500 hover:text-white'>Add to Cart</button>

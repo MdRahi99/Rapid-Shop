@@ -8,7 +8,7 @@ const ProductDetailsCard = (product) => {
     const [, addToCart] = useCart();
 
     const handleAddToCart = () => {
-        addToCart(product);
+        addToCart(product.product.data);
         toast.success('Product Added Successfully!', {
             position: "top-center",
             autoClose: 1000,
@@ -38,7 +38,7 @@ const ProductDetailsCard = (product) => {
                 </div>
                 <div className="flex items-center justify-between gap-4">
                     <button onClick={handleAddToCart} className='w-1/2 py-2 text-sm mt-3 bg-sky-200 uppercase font-Ledger font-bold hover:bg-sky-500 hover:text-white'>Add to Cart</button>
-                    <Link className='w-1/2 py-2 text-sm mt-3 bg-sky-200 uppercase text-center font-Ledger font-bold hover:bg-sky-500 hover:text-white' to='/products'>Back</Link>
+                    <Link className='w-1/2 py-2 text-sm mt-3 bg-sky-200 uppercase text-center font-Ledger font-bold hover:bg-sky-500 hover:text-white' to='/dashboard/products'>Back</Link>
                 </div>
             </div>
         </>

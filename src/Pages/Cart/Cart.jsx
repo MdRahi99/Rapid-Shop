@@ -25,6 +25,9 @@ const Cart = () => {
     };
 
     const totalPrice = cart.reduce((total, item) => total + item.product.Price, 0).toFixed(2);
+    const shippingCost = 12;
+    const discount = 5;
+    const totalPayable = (parseFloat(totalPrice) + shippingCost - discount).toFixed(2);
 
     return (
         <>
@@ -59,9 +62,10 @@ const Cart = () => {
                 </div>
                 <div className="divider divider-vertical lg:divider-horizontal"></div>
                 <div className="w-full flex flex-col justify-center gap-4 lg:w-2/6">
-                    <h3 className="text-lg font-sans font-semibold">Total Items: {cart.length}</h3>
-                    <h1 className="text-lg font-sans font-semibold">Total Price: ${totalPrice}</h1>
-                    <h3 className="text-lg font-sans font-semibold">Sub Total: ${totalPrice}</h3>
+                    <h1 className="text-lg font-sans font-semibold">Subtotal Price: ${totalPrice}</h1>
+                    <h1 className="text-lg font-sans font-semibold">Shipping Cost(+): ${shippingCost}</h1>
+                    <h1 className="text-lg font-sans font-semibold">Discount(-): ${discount}</h1>
+                    <h1 className="text-lg font-sans font-semibold">Total Payable: ${totalPayable}</h1>
                     <button className="text-lg p-1 bg-sky-400 font-bold text-white hover:bg-sky-300 mt-12">Place Order</button>
                 </div>
             </div>

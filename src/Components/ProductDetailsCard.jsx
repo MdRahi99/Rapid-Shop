@@ -24,7 +24,7 @@ const ProductDetailsCard = (product) => {
 
     return (
         <>
-            <div>
+            <div className="flex flex-col h-full lg:h-[80vh] justify-center">
                 <div className="flex flex-col lg:flex-row gap-4 justify-between">
                     <div className="w-full lg:w-1/2">
                         <img className="w-full rounded-tl-3xl rounded-br-3xl h-fit" src={ImageUrl} alt={Name} />

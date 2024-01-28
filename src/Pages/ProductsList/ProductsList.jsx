@@ -4,6 +4,7 @@ import { Zoom, toast } from "react-toastify";
 import useAllProducts from "../../Hooks/useAllProducts";
 import { useState } from "react";
 import AddProductModal from "../../Components/AddProductModal";
+import { Link } from "react-router-dom";
 
 const ProductsList = () => {
 
@@ -59,7 +60,7 @@ const ProductsList = () => {
                                 const { _id, Name, Price, Rating } = product;
                                 return <tr key={_id} className="hover:bg-sky-50 text-left text-sm text-[#313030] font-Ledger font-medium">
                                     <th>{index + 1}</th>
-                                    <td>{Name}</td>
+                                    <td><Link className="hover:font-bold" to={`/dashboard/products/product-details/${_id}`}>{Name}</Link></td>
                                     <td>${Price}</td>
                                     <td>{Rating}</td>
                                     <td><button onClick={() => handleDelete(_id)}>

@@ -2,11 +2,13 @@
 import { Zoom, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import useOrders from "../Hooks/useOrders";
+import useCart from "../Hooks/useCart";
 
 const AddOrderModal = ({ totalPayable, showModal, closeModal }) => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const [, addOrder, , refetch] = useOrders();
+    const [, addOrder] = useOrders();
+    const [, , , refetch] = useCart();
 
     const onOrderSubmit = async (data) => {
         try {

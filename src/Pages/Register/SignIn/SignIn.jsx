@@ -41,7 +41,7 @@ const SignIn = () => {
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-sky-50">
-            <div className="bg-white p-16 rounded-tl-3xl rounded-br-3xl shadow-lg w-5/6 lg:w-2/6 mx-auto shadow-sky-300">
+            <div className="bg-white p-6 lg:p-16 rounded-tl-3xl rounded-br-3xl shadow-lg w-5/6 lg:w-2/6 mx-auto shadow-sky-300">
                 <h2 className="text-xl uppercase text-center font-semibold mb-8 font-Ledger border-b-2 border-sky-300 pb-4">Rapid Shop Login</h2>
                 <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
                     <div>

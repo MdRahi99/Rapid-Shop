@@ -6,7 +6,7 @@ const useOrders = () => {
         queryKey: ['orders'],
         queryFn: async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/orders');
+                const res = await axios.get('https://rapid-shop-server.vercel.app/api/orders');
                 return res.data.orders;
             } catch (error) {
                 throw new Error('Failed to fetch orders');
@@ -16,7 +16,7 @@ const useOrders = () => {
 
     const addOrder = async (order) => {
         try {
-            await axios.post('http://localhost:5000/api/orders', order);
+            await axios.post('https://rapid-shop-server.vercel.app/api/orders', order);
             refetch();
         } catch (error) {
             throw new Error('Failed to add order');
@@ -25,7 +25,7 @@ const useOrders = () => {
 
     const removeOrder = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/orders/${id}`);
+            await axios.delete(`https://rapid-shop-server.vercel.app/api/orders/${id}`);
             refetch();
         } catch (error) {
             throw new Error('Failed to remove order');

@@ -8,7 +8,7 @@ const useCart = () => {
         queryKey: ['cart'],
         queryFn: async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/cart');
+                const res = await axios.get('https://rapid-shop-server.vercel.app/api/cart');
                 return res.data.cart;
             } catch (error) {
                 throw new Error('Failed to fetch cart');
@@ -18,7 +18,7 @@ const useCart = () => {
 
     const addToCart = async (product) => {
         try {
-            await axios.post('http://localhost:5000/api/cart', { product });
+            await axios.post('https://rapid-shop-server.vercel.app/api/cart', { product });
             refetch();
         } catch (error) {
             throw new Error('Failed to add item to cart');
@@ -27,7 +27,7 @@ const useCart = () => {
 
     const removeFromCart = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/cart/${id}`);
+            await axios.delete(`https://rapid-shop-server.vercel.app/api/cart/${id}`);
             refetch();
         } catch (error) {
             throw new Error('Failed to remove item from cart');

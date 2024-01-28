@@ -13,7 +13,7 @@ const ProductDetails = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+                const response = await axios.get(`https://rapid-shop-server.vercel.app/api/products/${id}`);
                 setProduct(response.data);
                 setLoading(false);
             } catch (error) {

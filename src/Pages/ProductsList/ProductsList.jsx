@@ -20,7 +20,7 @@ const ProductsList = () => {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/api/products/${id}`)
+        axios.delete(`https://rapid-shop-server.vercel.app/api/products/${id}`)
             .then(data => {
                 if (data.data.success) {
                     toast.success('Product Deleted Successfully!', {

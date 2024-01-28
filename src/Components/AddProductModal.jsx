@@ -12,7 +12,7 @@ const AddProductModal = ({ showModal, closeModal }) => {
 
     const onProductSubmit = async (data) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/products', data);
+            const response = await axios.post('https://rapid-shop-server.vercel.app/api/products', data);
             toast.success('Product Added Successfully!', {
                 position: "top-center",
                 autoClose: 1000,

@@ -8,7 +8,7 @@ const Customers = () => {
     const [users, refetch] = useAllUsers();
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/api/users/${id}`)
+        axios.delete(`https://rapid-shop-server.vercel.app/api/users/${id}`)
             .then(data => {
                 if (data.data.success) {
                     toast.success('User Deleted Successfully!', {

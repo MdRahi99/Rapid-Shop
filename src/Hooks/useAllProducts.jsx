@@ -6,7 +6,7 @@ const useAllProducts = () => {
     const { refetch, data: products = [] } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/api/products')
+            const res = await axios.get('https://rapid-shop-server.vercel.app/api/products')
             return res.data.data;
         }
     });

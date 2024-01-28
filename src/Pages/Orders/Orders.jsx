@@ -8,7 +8,7 @@ const Orders = () => {
     const [orders, , , refetch] = useOrders();
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/api/orders/${id}`)
+        axios.delete(`https://rapid-shop-server.vercel.app/api/orders/${id}`)
             .then(data => {
                 if (data.data.message) {
                     toast.success(`${data.data.message}`, {

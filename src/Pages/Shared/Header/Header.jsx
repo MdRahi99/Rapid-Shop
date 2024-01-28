@@ -1,11 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../Hooks/useAuth';
 import useCart from '../../../Hooks/useCart';
+import useOrders from '../../../Hooks/useOrders';
 
 const Header = () => {
 
     const {logout} = useAuth();
     const [cart] = useCart();
+    const [orders] = useOrders();
     const navigate = useNavigate();
 
     return (
@@ -29,7 +31,7 @@ const Header = () => {
                     <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/dashboard/customers'>Customers List</Link>
                 </li>
                 <li>
-                    <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/dashboard/orders'>Orders List</Link>
+                    <Link className='font-semibold hover:bg-sky-200 rounded-none text-sm' to='/dashboard/orders'>Orders List <span className='bg-orange-400 font-bold text-white w-8 text-center'>{orders.length}</span></Link>
                 </li>
                 <li>
                     <button onClick={() => {

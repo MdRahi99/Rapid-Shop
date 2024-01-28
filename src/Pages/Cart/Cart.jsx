@@ -1,9 +1,20 @@
 import { Zoom, toast } from "react-toastify";
 import useCart from "../../Hooks/useCart";
 import { MdDelete } from "@react-icons/all-files/md/MdDelete";
+import AddOrderModal from "../../Components/AddOrderModal";
+import { useState } from "react";
 
 const Cart = () => {
     const [cart, , removeFromCart] = useCart();
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+    };
 
     const handleDelete = async (id) => {
         try {
@@ -66,9 +77,13 @@ const Cart = () => {
                     <h1 className="text-lg font-sans font-semibold">Shipping Cost(+): ${shippingCost}</h1>
                     <h1 className="text-lg font-sans font-semibold">Discount(-): ${discount}</h1>
                     <h1 className="text-lg font-sans font-semibold">Total Payable: ${totalPayable}</h1>
-                    <button className="text-lg p-1 bg-sky-400 font-bold text-white hover:bg-sky-300 mt-12">Place Order</button>
+                    <button onClick={openModal} className="text-lg p-1 bg-sky-400 font-bold text-white hover:bg-sky-300 mt-12">Place Order</button>
                 </div>
             </div>
+            <AddOrderModal
+                totalPayable={totalPayable}
+                showModal={showModal}
+                closeModal={closeModal} />
         </>
     );
 };
